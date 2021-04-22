@@ -2,6 +2,9 @@
 <div class="hero">
   <div class="heroBox">
     <form class="pure-form">
+      <br />
+      <br />
+      <br />
       <fieldset>
         <legend>Register for an account</legend>
         <input placeholder="first name" v-model="firstName">
@@ -88,7 +91,7 @@ export default {
 
 <style scoped>
 .space-above {
-  margin-top: 50px;
+  margin-top: 45px;
 }
 
 h1 {
@@ -124,7 +127,11 @@ input {
   padding: 5px 20px;
   border-radius: 30px;
   font-size: 10px;
-  background-color: #d9534f;
+  background-color: #1C454F;
   color: #fff;
+}
+
+button {
+  background-color: #1C454F;
 }
 </style>

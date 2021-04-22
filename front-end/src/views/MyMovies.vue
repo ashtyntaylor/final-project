@@ -1,25 +1,27 @@
 <template>
 <div class="mymovies">
   <div v-if="user">
-    <h1>My Movies</h1>
-    <div class="pick" v-if="yourPick != null">
-      <br />
-      <h1>Grab some popcorn!  Tonight you selected to watch...</h1>
-      <h2>{{yourPick.title}}</h2>
-      <h3>{{yourPick.description}}</h3>
-      <img :src="yourPick.path" />
-      <h3>Genre: {{yourPick.genre}}</h3>
-      <h3>Duration: {{yourPick.duration}} minutes</h3>
-      <h3>Starring: {{yourPick.starring}}</h3>
-      <h3>Uploaded By: {{yourPick.user.firstName}} {{yourPick.user.lastName}}</h3>
-    </div>
-    <div v-else>
-      <section class="image-gallery">
-        <div @click="yourPick=movie" class="image" v-for="movie in movies" :key="movie.id">
-          <h2>{{movie.title}}</h2>
-          <img :src="movie.path"/>
-        </div>
-      </section>
+    <div class="moviesbody">
+      <h1>My Movies</h1>
+      <div class="pick" v-if="yourPick != null">
+        <br />
+        <h1>Grab some popcorn!  Tonight you selected to watch...</h1>
+        <h2>{{yourPick.title}}</h2>
+        <h3>{{yourPick.description}}</h3>
+        <img :src="yourPick.path" />
+        <h3>Genre: {{yourPick.genre}}</h3>
+        <h3>Duration: {{yourPick.duration}} minutes</h3>
+        <h3>Starring: {{yourPick.starring}}</h3>
+        <h3>Uploaded By: {{yourPick.user.firstName}} {{yourPick.user.lastName}}</h3>
+      </div>
+      <div v-else>
+        <section class="image-gallery">
+          <div @click="yourPick=movie" class="image" v-for="movie in movies" :key="movie.id">
+            <h2>{{movie.title}}</h2>
+            <img :src="movie.path"/>
+          </div>
+        </section>
+      </div>
     </div>
   </div>
   <Login v-else />
@@ -101,7 +103,7 @@ h1 {
   text-align: center;
 }
 
-.mymovies {
+.moviesbody {
   padding-top: 120px;
 }
 
